@@ -12,6 +12,10 @@ Key features:
 - Support for multiple document formats (PDF, TXT)
 - Clean, modern user interface
 
+<img src="images/image_1.png" alt="Logo" height="400">
+<img src="images/image_2.png" alt="Logo" height="400">
+
+
 ## Built With
 
 * Frontend:
@@ -97,3 +101,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Deep Rodge - [@deeprodge](https://linkedin.com/in/deeprodge) - deeprodge14@gmail.com
 
 Project Link: [https://github.com/deeprodge/claimwise](https://github.com/deeprodge/claimwise) 
+

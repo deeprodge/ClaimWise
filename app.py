@@ -33,9 +33,12 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Initialize Elasticsearch with security settings
 try:
+    es_url = os.getenv("ELASTICSEARCH_URL")
+    es_username = os.getenv("ELASTICSEARCH_USERNAME")
+    es_password = os.getenv("ELASTICSEARCH_PASSWORD")
     es = Elasticsearch(
-        "https://localhost:9200",
-        basic_auth=("elastic", "rdCqw2vPytV83FNkrUHO"),
+        es_url,
+        http_auth=(es_username, es_password),
         verify_certs=False  # For development only
     )
     if not es.ping():
