@@ -1,0 +1,226 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e6f2ff;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    height: calc(100vh - 150px);
+}
+
+/* Upload Section */
+.upload-section {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.upload-area {
+    border: 2px dashed #99c2ff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 10px 0;
+    cursor: pointer;
+    background: #f0f8ff;
+}
+
+.upload-area.dragover {
+    border-color: #66a3ff;
+    background: #e0f0ff;
+}
+
+#uploadedFiles {
+    margin-top: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background: #f0f8ff;
+    border-radius: 4px;
+    margin: 5px 0;
+}
+
+/* Chat Interface */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 80%;
+    margin: 10px 0;
+    padding: 12px 16px;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+
+.message.user {
+    background: #66a3ff;
+    color: white;
+    margin-left: auto;
+    border-bottom-right-radius: 5px;
+}
+
+.message.system {
+    background: #f0f8ff;
+    border-bottom-left-radius: 5px;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+#userQuery {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    resize: none;
+    height: 24px;
+}
+
+#queryButton {
+    background: #66a3ff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+#queryButton svg {
+    fill: white;
+    width: 24px;
+    height: 24px;
+}
+
+#queryButton:hover {
+    background: #4d94ff;
+}
+
+.message.debug {
+    background: #f0f8ff;
+    color: #666;
+    font-family: monospace;
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    max-width: 100%;
+}
+
+.message.error {
+    background: #fee;
+    color: #c00;
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #66a3ff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.upload-area.processing {
+    background: #e0f0ff;
+    border-color: #66a3ff;
+    pointer-events: none;
+}
+
+/* Add styles for formatted elements inside messages */
+.message strong {
+    font-weight: 600;
+}
+
+.message em {
+    font-style: italic;
+}
+
+.message br {
+    margin-bottom: 8px;
+}
+
+.message h1, .message h2, .message h3 {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.message h1 { font-size: 1.5em; }
+.message h2 { font-size: 1.3em; }
+.message h3 { font-size: 1.1em; }
+
+.message ul {
+    margin: 8px 0;
+    padding-left: 20px;
+}
+
+.upload-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reset-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 12px;
+    background-color: #ff6666;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.reset-button:hover {
+    background-color: #e60000;
+}
+
+.reset-button svg {
+    fill: currentColor;
+}
+
+h1 {
+    text-align: center;
+    color: #04265a; /* Pastel blue color */
+    margin-bottom: 20px;
+}
+  

@@ -1,0 +1,7 @@
+flask==2.2.5
+elasticsearch==8.14.0
+openai==1.12.0  # Updated to latest version
+python-dotenv==1.0.0
+PyPDF2==3.0.0
+nltk==3.8.1
+numpy==1.26.4
