@@ -15,7 +15,6 @@ Key features:
 <img src="images/image_1.png" alt="Logo" height="400">
 <img src="images/image_2.png" alt="Logo" height="400">
 
-
 ## Built With
 
 * Frontend:
@@ -29,6 +28,31 @@ Key features:
   - [Elasticsearch](https://www.elastic.co/) - For document indexing and semantic search
   - [NLTK](https://www.nltk.org/) - For text processing
   - [PyPDF2](https://pypdf2.readthedocs.io/) - For PDF processing
+
+## How It Works
+
+1. **Document Upload and Processing**:
+   - Users upload documents (PDF, TXT) via the web interface.
+   - The uploaded document is saved to the server and processed to extract text content.
+
+2. **Chunking**:
+   - The extracted text is split into smaller, overlapping chunks using the [`chunk_document`](app.py) function. This ensures that each chunk is of manageable size and maintains context continuity.
+
+3. **Embedding Generation**:
+   - Each chunk of text is converted into a high-dimensional vector (embedding) using the OpenAI API. This is done via the [`get_embedding`](app.py) and [`get_embeddings_batch`](app.py) functions.
+
+4. **Indexing in Elasticsearch**:
+   - The chunks, along with their embeddings, are stored in an Elasticsearch index. This allows for efficient semantic search. The indexing process is handled by the [`process_file`](app.py) function.
+
+5. **Query Processing**:
+   - When a user submits a query, it is converted into an embedding using the OpenAI API.
+   - This query embedding is used to perform a k-Nearest Neighbors (kNN) search in Elasticsearch to find the top k most similar document chunks.
+
+6. **Context Assembly**:
+   - The relevant chunks retrieved from Elasticsearch are assembled into a context string. This is done using the [`assemble_context`](app.py) function.
+
+7. **Answer Generation**:
+   - The assembled context, along with the user query, is sent to the OpenAI API to generate a response. This is handled by the [`query`](app.py) function.
 
 ## Getting Started
 
@@ -100,5 +124,5 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 Deep Rodge - [@deeprodge](https://linkedin.com/in/deeprodge) - deeprodge14@gmail.com
 
-Project Link: [https://github.com/deeprodge/claimwise](https://github.com/deeprodge/claimwise) 
+Project Link: [https://github.com/deeprodge/claimwise](https://github.com/deeprodge/claimwise)
 
